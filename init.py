@@ -37,4 +37,4 @@ async def value_error_handler(request: Request, exc: ValueError):
 
 @app.get("/", tags=["Welcome"])
 def welcome():
-    return {"message": "welcome to backend Trainer Hub ⚓."}
+    return {"message": "welcome to backend python ⚓."}
