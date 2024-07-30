@@ -14,7 +14,8 @@ Proporciona diversas utilidades adicionales para trabajar con SQLAlchemy.
 Una herramienta para asegurar la calidad del código siguiendo las convenciones de PEP8.
 ## PyJWT: 
 Una biblioteca para trabajar con JSON Web Tokens (JWT) para autenticación.
-## passlib[bcrypt]: Para la gestión de contraseñas, incluyendo el hashing seguro utilizando bcrypt.
+## passlib[bcrypt]: 
+Para la gestión de contraseñas, incluyendo el hashing seguro utilizando bcrypt.
 
 ## Run Locally
 Los archivos [main.py, runtime.txt, vercel.json] son de configuracion para desplegar la aplicacion en VERCEL. Si desea desplegar la aplicacion en cualquier otro servicio puede modificar las actios en la carpeta .github/workflows/template-deploy.txt sino usar la configuracion que esta presente en la plantilla.
