@@ -4,7 +4,7 @@ from models.example_model import ExampleModel
 from sqlalchemy import and_, sql
 
 
-class ExampleRepository:
+class LoginRepository:
     def __init__(self):
         self.db = Database()
         self.session = self.db.get_session()

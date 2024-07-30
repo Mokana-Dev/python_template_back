@@ -1,5 +1,5 @@
 from utils.database import Database
-from seeds.example_seed import ExampleSeeds
+from seeds.example_seed import UsersAdminSeeds
 
 
 class MainSeeds:
@@ -10,7 +10,7 @@ class MainSeeds:
             db = Database()
             session = db.get_session()
 
-            ExampleSeeds.seed_programs(session)
+            UsersAdminSeeds.seed_users_admin(session)
         except Exception as e:
             print(f'Ha ocurrido un error en el MainSeeds {e}')
 

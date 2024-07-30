@@ -1,22 +1,22 @@
-from models.example_model import ExampleModel
+from models.user_admins_model import UserAdminModel
 
 
-class ExampleSeeds:
+class UsersAdminSeeds:
 
     @classmethod
-    def seed_programs(cls, session):
+    def seed_users_admin(cls, session):
         try:
-            programs = [
-                {"name": "Bill payment", "description": "BOT para pagar facturas."},
-                {"name": "Credit store", "description": "BOT para ofrecer creditos a tiendas."}
+            users = [
+                {"username": "hawkinsDev", "password": "221122"},
+                {"username": "orozcoDev", "password": "123456789"}
             ]
 
-            for program in programs:
-                exits = session.query(ExampleModel).filter_by(name=program['name']).first()
+            for user in users:
+                exits = session.query(UserAdminModel).filter_by(username=user['username']).first()
                 if not exits:
-                    prog = ExampleModel(**program)
+                    prog = UserAdminModel(**user)
                     session.add(prog)
 
             session.commit()
         except Exception as e:
-            print(f'Ha ocurrido un error en la función seed_programs {e}')
+            print(f'Ha ocurrido un error en la función seed_users {e}')

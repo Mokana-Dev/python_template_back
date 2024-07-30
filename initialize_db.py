@@ -1,6 +1,6 @@
 # initialize_db.py
 from utils.database import Database, Base
-from models.example_model import ExampleModel # noqa F401
+from models.user_admins_model import UserAdminModel # noqa F401
 
 
 def initialize_db():
