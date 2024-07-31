@@ -1,6 +1,7 @@
 from sqlalchemy.orm import collections, class_mapper
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
+from datetime import datetime, date
 
 
 # Clase encargada de armar el response para las apis
@@ -134,6 +135,12 @@ class ModelResponse():
         mapper = class_mapper(obj.__class__)
 
         for column in mapper.columns:
+            if isinstance(getattr(obj, column.key), datetime):
+                data[column.key] = str(getattr(obj, column.key))
+
+            if isinstance(getattr(obj, column.key), date):
+                data[column.key] = str(getattr(obj, column.key))
+
             data[column.key] = getattr(obj, column.key)
 
         if with_relationships:
