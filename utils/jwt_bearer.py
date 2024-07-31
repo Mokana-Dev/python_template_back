@@ -1,6 +1,6 @@
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-# from services.loginService import LoginService
+from features.auth.Class.login import Login
 
 
 class JWTBearer(HTTPBearer):
@@ -21,8 +21,7 @@ class JWTBearer(HTTPBearer):
     def verify_jwt(self, jwtoken: str) -> bool:
         isTokenValid: bool = False
         try:
-            payload = jwtoken
-            # LoginService().verify_token(jwtoken)
+            payload = Login.verify_access_token(jwtoken)
         except Exception as e:
             print("Error", e)
             payload = None
